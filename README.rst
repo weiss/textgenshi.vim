@@ -22,4 +22,4 @@ order to auto-detect them::
 .. _text templates:
    http://genshi.edgewall.org/wiki/Documentation/text-templates.html
 .. _genshi.vim:
-   https://raw.github.com/weiss/genshi.vim/master/genshi.vim
+   https://raw.github.com/weiss/genshi.vim/master/syntax/genshi.vim
