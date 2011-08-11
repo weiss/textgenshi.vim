@@ -23,17 +23,18 @@ syn keyword genshiTodo TODO FIXME XXX contained
 
 syn match genshiEndComment "\_.\{-1,}%}" contained contains=genshiTodo
 syn match genshiError "{[%#]" contained display
+syn match genshiEscaped "\\\n" display
 syn match genshiEscaped "\$\$" display
 syn match genshiEscaped "\\{[%#]" display
 syn match genshiExpression "\$[a-zA-Z0-9._]\+" display
 
 syn region genshiExpression start="\${" end="}"
   \ contains=@pythonCode,genshiFunction
-syn region genshiBlock matchgroup=genshiDelimiter start="{%" end="%}\(\\$\)\?" keepend
+syn region genshiBlock matchgroup=genshiDelimiter start="{%" end="%}" keepend
   \ contains=@pythonCode,@genshiCode,genshiError
-syn region genshiPythonBlock matchgroup=genshiPythonDelimiter start="{%\_s\+python\_s" end="%}\(\\$\)\?" keepend
+syn region genshiPythonBlock matchgroup=genshiPythonDelimiter start="{%\_s\+python\_s" end="%}" keepend
   \ contains=@pythonCode,genshiError
-syn region genshiComment start="{#" end="#}\(\\$\)\?"
+syn region genshiComment start="{#" end="#}"
   \ contains=genshiTodo
 
 hi link genshiError Error
