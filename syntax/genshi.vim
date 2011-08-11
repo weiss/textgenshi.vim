@@ -12,7 +12,7 @@ syn include @pythonCode syntax/python.vim
 syn case match
 
 syn cluster genshiCode
-  \ contains=genshiFunction,genshiExpression,genshiOperator,genshiStatement
+  \ contains=genshiFunction,genshiOperator,genshiStatement
 
 syn keyword genshiFunction defined value_of contained
 syn keyword genshiStatement def for if include with contained
@@ -28,7 +28,7 @@ syn match genshiEscaped "\\{[%#]" display
 syn match genshiExpression "\$[a-zA-Z0-9._]\+" display
 
 syn region genshiExpression start="\${" end="}"
-  \ contains=@pythonCode,genshiExpression,genshiFunction
+  \ contains=@pythonCode,genshiFunction
 syn region genshiBlock matchgroup=genshiDelimiter start="{%" end="%}\(\\$\)\?" keepend
   \ contains=@pythonCode,@genshiCode,genshiError
 syn region genshiPythonBlock matchgroup=genshiPythonDelimiter start="{%\_s\+python\_s" end="%}\(\\$\)\?" keepend
