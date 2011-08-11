@@ -25,7 +25,7 @@ syn match genshiEndComment "\_.\{-1,}%}" contained contains=genshiTodo
 syn match genshiError "{[%#]" contained display
 syn match genshiEscaped "\$\$" display
 syn match genshiEscaped "\\{[%#]" display
-syn match genshiExpression "\$[a-zA-Z0-9\._]\+" display
+syn match genshiExpression "\$[a-zA-Z0-9._]\+" display
 
 syn region genshiExpression start="\${" end="}"
   \ contains=@pythonCode,genshiExpression,genshiFunction
